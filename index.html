@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bill Reminder Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Header -->
+
+<header>
+
+<div>
+
+<h1>📅 Bill Reminder </h1>
+
+<p>Manage your bills, recharge and subscriptions easily.</p>
+
+</div>
+
+<button id="themeBtn">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+<!-- Dashboard -->
+
+<section class="dashboard">
+
+<div class="card">
+
+<h3>Total Bills</h3>
+
+<h2 id="totalBills">0</h2>
+
+</div>
+
+<div class="card warning">
+
+<h3>Pending</h3>
+
+<h2 id="pendingBills">0</h2>
+
+</div>
+
+<div class="card success">
+
+<h3>Paid</h3>
+
+<h2 id="paidBills">0</h2>
+
+</div>
+
+</section>
+
+<!-- Add Reminder -->
+
+<section class="form-card">
+
+<h2>Add Reminder</h2>
+
+<form id="billForm">
+
+<input
+type="text"
+id="title"
+placeholder="Bill Title"
+required>
+
+<input
+type="number"
+id="amount"
+placeholder="Amount"
+required>
+
+<select id="category">
+
+<option value="Mobile Recharge">
+
+📱 Mobile Recharge
+
+</option>
+
+<option value="Electricity">
+
+⚡ Electricity
+
+</option>
+
+<option value="WiFi">
+
+🌐 WiFi
+
+</option>
+
+<option value="Water">
+
+💧 Water
+
+</option>
+
+<option value="OTT">
+
+📺 OTT Subscription
+
+</option>
+
+<option value="Insurance">
+
+🚗 Insurance
+
+</option>
+
+<option value="Credit Card">
+
+💳 Credit Card
+
+</option>
+
+<option value="Rent">
+
+🏠 Rent
+
+</option>
+
+<option value="Other">
+
+📦 Other
+
+</option>
+
+</select>
+
+<input
+type="date"
+id="date"
+required>
+
+<select id="status">
+
+<option value="Pending">
+
+Pending
+
+</option>
+
+<option value="Paid">
+
+Paid
+
+</option>
+
+</select>
+
+<button
+type="submit"
+id="saveBtn">
+
+Save Reminder
+
+</button>
+
+</form>
+
+</section>
+
+<!-- Search -->
+
+<section class="toolbar">
+
+<input
+type="text"
+id="search"
+placeholder="Search reminder...">
+
+<select id="filter">
+
+<option value="all">
+
+All
+
+</option>
+
+<option value="Pending">
+
+Pending
+
+</option>
+
+<option value="Paid">
+
+Paid
+
+</option>
+
+</select>
+
+</section>
+
+<!-- Reminder List -->
+
+<section>
+
+<h2>Your Reminders</h2>
+
+<div id="billList">
+
+<p class="empty">
+
+No reminders added.
+
+</p>
+
+</div>
+
+</section>
+<!-- ================= EDIT MODAL ================= -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Reminder</h2>
+
+        <input
+            type="hidden"
+            id="editId">
+
+        <input
+            type="text"
+            id="editTitle"
+            placeholder="Bill Title">
+
+        <input
+            type="number"
+            id="editAmount"
+            placeholder="Amount">
+
+        <select id="editCategory">
+
+            <option value="Mobile Recharge">📱 Mobile Recharge</option>
+            <option value="Electricity">⚡ Electricity</option>
+            <option value="WiFi">🌐 WiFi</option>
+            <option value="Water">💧 Water</option>
+            <option value="OTT">📺 OTT Subscription</option>
+            <option value="Insurance">🚗 Insurance</option>
+            <option value="Credit Card">💳 Credit Card</option>
+            <option value="Rent">🏠 Rent</option>
+            <option value="Other">📦 Other</option>
+
+        </select>
+
+        <input
+            type="date"
+            id="editDate">
+
+        <select id="editStatus">
+
+            <option value="Pending">Pending</option>
+
+            <option value="Paid">Paid</option>
+
+        </select>
+
+        <div class="modal-buttons">
+
+            <button
+                type="button"
+                id="updateBtn">
+
+                Update
+
+            </button>
+
+            <button
+                type="button"
+                id="cancelBtn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        Bill Reminder Pro © 2026
+
+    </p>
+
+    <p>
+
+        Developed by Harsh Naik
+
+    </p>
+
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
